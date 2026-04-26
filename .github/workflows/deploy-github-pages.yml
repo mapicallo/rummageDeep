@@ -1,8 +1,9 @@
 # Builds the PWA and publishes to branch `gh-pages` for GitHub Project Pages
 # (https://mapicallo.github.io/rummageDeep/).
 #
-# After the first run: Repository Settings → Pages → Build and deployment →
+# REQUIRED: Repository Settings → Pages → Build and deployment →
 # Source: Deploy from a branch → Branch: gh-pages / /(root).
+# If you leave "main", the site will keep showing README.md instead of the PWA.
 
 name: Deploy PWA to GitHub Pages
 
@@ -33,6 +34,10 @@ jobs:
 
       - name: Include privacy policy in site root
         run: cp privacy.html apps/pwa/dist/privacy.html
+
+      # Avoid Jekyll processing asset paths when using /rummageDeep/ base
+      - name: Disable Jekyll
+        run: touch apps/pwa/dist/.nojekyll
 
       - uses: peaceiris/actions-gh-pages@v3
         with:

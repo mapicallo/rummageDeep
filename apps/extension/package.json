@@ -1,0 +1,20 @@
+{
+  "name": "@rummagedeep/extension",
+  "version": "0.3.7",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "icons": "node scripts/generate-icons.mjs"
+  },
+  "dependencies": {
+    "@rummagedeep/core": "*"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "sharp": "^0.33.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.11"
+  }
+}

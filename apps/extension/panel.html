@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RummageDeep</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-row">
+          <div class="logo">
+            <div class="logo-icon" aria-hidden="true">🔍</div>
+            <div class="logo-text">
+              <h1>RummageDeep</h1>
+              <p class="subtitle" id="subtitle">By AI4Context</p>
+            </div>
+          </div>
+          <div class="language-selector">
+            <label for="languageSelect" class="language-label" id="languageLabel">Language</label>
+            <select id="languageSelect" aria-label="Language">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+            </select>
+          </div>
+        </div>
+      </header>
+      <section class="body-section">
+        <p class="lede" id="ledeSearch"></p>
+        <label class="field-label" for="query" id="labelQuery">Query</label>
+        <input type="text" id="query" class="field-input" autocomplete="off" />
+        <label class="field-label" for="mode" id="labelMode">Mode</label>
+        <select id="mode" class="field-input">
+          <option value="auto" id="modeOptAuto">Auto</option>
+          <option value="literal" id="modeOptLiteral">Literal normalized</option>
+        </select>
+        <p class="mode-hint" id="modeHint" role="note"></p>
+        <div class="btn-row">
+          <button type="button" class="btn btn-primary" id="searchPage">Search this page</button>
+          <button type="button" class="btn btn-ghost" id="clearPage">Clear highlights</button>
+        </div>
+        <div class="status-wrap" id="statusWrap">
+          <div id="statusBanner" class="status-banner" hidden>
+            <span class="status-banner-count" id="statusBannerCount"></span>
+            <p class="status-banner-line" id="statusBannerLine"></p>
+            <p class="status-banner-sub" id="statusBannerSub"></p>
+            <div id="matchNav" class="match-nav" hidden>
+              <button type="button" class="match-nav-btn" id="matchPrev" aria-label="">◀</button>
+              <span id="matchPosition" class="match-position"></span>
+              <button type="button" class="match-nav-btn" id="matchNext" aria-label="">▶</button>
+            </div>
+          </div>
+          <p class="status-plain" id="statusPlain" role="status"></p>
+        </div>
+      </section>
+      <div class="footer-pre">
+        <p class="footer-pre-line">
+          <span id="versionText"></span>
+          <span class="footer-pre-sep" aria-hidden="true">·</span>
+          <a
+            id="footerGithub"
+            class="footer-pre-link"
+            href="https://github.com/mapicallo/rummageDeep"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+        </p>
+      </div>
+      <footer class="footer-bar">
+        <div class="footer-bar-inner">
+          <div class="footer-brand-cluster">
+            <span class="footer-bar-accent" aria-hidden="true"></span>
+            <img
+              class="footer-brand-img"
+              src="./icons/icon48.png"
+              width="32"
+              height="32"
+              alt=""
+            />
+          </div>
+          <span class="footer-by" id="footerBy"><span id="footerByPrefix"></span> <strong>AI4Context</strong></span>
+          <span class="footer-bar-divider" aria-hidden="true"></span>
+          <a
+            class="footer-support"
+            id="footerSupport"
+            href="https://github.com/mapicallo/rummageDeep"
+            target="_blank"
+            rel="noopener"
+            >Support</a
+          >
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/src/panel.ts"></script>
+  </body>
+</html>

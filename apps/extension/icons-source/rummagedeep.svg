@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="8%" y1="8%" x2="92%" y2="92%">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="100%" stop-color="#764ba2"/>
+    </linearGradient>
+  </defs>
+  <!-- App tile -->
+  <rect width="128" height="128" rx="26" ry="26" fill="url(#bg)"/>
+  <!-- depth lines -->
+  <path
+    d="M22 96h84M26 104h76M30 112h68"
+    stroke="rgba(255,255,255,0.38)"
+    stroke-width="5"
+    stroke-linecap="round"
+  />
+  <!-- Magnifier -->
+  <circle
+    cx="52"
+    cy="50"
+    r="24"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="9"
+  />
+  <line
+    x1="69"
+    y1="67"
+    x2="90"
+    y2="88"
+    stroke="#ffffff"
+    stroke-width="9"
+    stroke-linecap="round"
+  />
+  <!-- Inner lens hint -->
+  <circle cx="52" cy="50" r="10" fill="rgba(255,255,255,0.22)"/>
+</svg>

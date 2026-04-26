@@ -1,0 +1,19 @@
+{
+  "name": "rummagedeep-monorepo",
+  "private": true,
+  "description": "RummageDeep — AI4Context. Deep search in pasted text and pages (PWA + extension).",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @rummagedeep/core && npm run build -w @rummagedeep/pwa && npm run build -w @rummagedeep/extension",
+    "dev:pwa": "npm run dev -w @rummagedeep/pwa",
+    "dev:ext": "npm run dev -w @rummagedeep/extension",
+    "test": "npm run test -w @rummagedeep/core",
+    "lint": "npm run lint -w @rummagedeep/core && npm run lint -w @rummagedeep/pwa"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

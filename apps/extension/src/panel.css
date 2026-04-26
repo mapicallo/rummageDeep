@@ -1,0 +1,452 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --gray-50: #f8f9fa;
+  --gray-100: #e9ecef;
+  --gray-300: #ced4da;
+  --gray-400: #adb5bd;
+  --gray-500: #6c757d;
+  --gray-600: #495057;
+  --gray-700: #343a40;
+  --gray-800: #212529;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --radius-lg: 8px;
+  --radius-md: 6px;
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition-fast: 0.15s ease;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 360px;
+  width: 100%;
+  min-height: 100%;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: var(--gray-800);
+  overflow-x: hidden;
+}
+
+.container {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  flex-shrink: 0;
+}
+
+.header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  min-width: 0;
+  flex: 1;
+}
+
+.logo-icon {
+  font-size: 26px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+.logo-text h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.logo-text .subtitle {
+  font-size: 0.65rem;
+  opacity: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.language-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  flex-shrink: 0;
+  max-width: 42%;
+}
+
+.language-selector .language-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.language-selector select {
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--gray-800);
+  cursor: pointer;
+  min-width: 118px;
+  width: auto;
+}
+
+.language-selector select:hover {
+  background: white;
+  border-color: white;
+}
+
+.language-selector select:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.body-section {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  flex: 1;
+}
+
+.lede {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--gray-600);
+}
+
+.lede strong {
+  color: var(--gray-700);
+}
+
+.field-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.field-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid #ced4da;
+  font-family: inherit;
+  font-size: 0.88rem;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.25);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+  flex: 1;
+  min-width: 120px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.06);
+}
+
+.btn-ghost {
+  background: white;
+  color: var(--gray-700);
+  border: 2px solid var(--gray-100);
+}
+
+.btn-ghost:hover {
+  border-color: #667eea;
+}
+
+.mode-hint {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--gray-600);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  border-left: 3px solid #667eea;
+  margin: 0;
+}
+
+.status-wrap {
+  min-height: 2.5rem;
+}
+
+.status-banner {
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.14) 0%,
+    rgba(118, 75, 162, 0.14) 100%
+  );
+  border: 1px solid rgba(102, 126, 234, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.12);
+}
+
+.status-banner-count {
+  display: block;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #4c3d91;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.status-banner-line {
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  line-height: 1.3;
+}
+
+.status-banner-sub {
+  margin: 10px 0 0;
+  font-size: 0.75rem;
+  color: var(--gray-600);
+  line-height: 1.4;
+}
+
+.status-banner-sub[hidden] {
+  display: none;
+}
+
+.match-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(102, 126, 234, 0.25);
+}
+
+.match-nav[hidden] {
+  display: none;
+}
+
+.match-nav-btn {
+  width: 40px;
+  height: 36px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  border: 2px solid rgba(102, 126, 234, 0.55);
+  background: #fff;
+  color: #523aa8;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.match-nav-btn:hover {
+  background: rgba(102, 126, 234, 0.12);
+  border-color: #667eea;
+}
+
+.match-nav-btn:active {
+  transform: scale(0.97);
+}
+
+.match-position {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  min-width: 9rem;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.status-plain {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--gray-700);
+  line-height: 1.4;
+}
+
+.status-plain.error {
+  color: #b02a37;
+  font-weight: 500;
+}
+
+.status-plain[hidden] {
+  display: none;
+}
+
+.footer-pre {
+  padding: var(--spacing-md) var(--spacing-lg) 10px;
+  border-top: 1px solid var(--gray-100);
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.footer-pre-line {
+  margin: 0;
+  font-size: 11px;
+  color: var(--gray-500);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.footer-pre-sep {
+  margin: 0 6px;
+  color: var(--gray-400);
+}
+
+.footer-pre-link {
+  color: var(--gray-600);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-pre-link:hover {
+  color: #667eea;
+  text-decoration: underline;
+}
+
+.footer-bar {
+  background: #0d0d0d;
+  color: #fff;
+  padding: 11px 16px;
+  flex-shrink: 0;
+}
+
+/* Green bar sits next to the logo (Find my phone–style), not at the window edge */
+.footer-brand-cluster {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.footer-bar-accent {
+  width: 5px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #4ade80 0%, #16a34a 100%);
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.35);
+}
+
+.footer-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.footer-brand-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
+
+.footer-by {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: nowrap;
+}
+
+.footer-by strong {
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer-bar-divider {
+  width: 2px;
+  height: 18px;
+  background: #e85d04;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.footer-support {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ff8c42;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer-support:hover {
+  text-decoration: underline;
+  color: #ffb366;
+}
